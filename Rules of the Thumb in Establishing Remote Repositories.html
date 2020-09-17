@@ -1,0 +1,82 @@
+<link href="txtstyle.css" rel="stylesheet" type="text/css" />
+
+Rules of the Thumb in Establishing Remote Repositories
+
+1. from Github OR even from a local computer (if repository is already existing in either sources) to a local computer
+
+	a. if it would be the local repository's 'origin'/FIRST remote repository:
+
+			git clone <REMOTE_URL> <option: directory_name>
+
+			OR
+
+			git clone "/H/Users/Carlo Durian/sample"
+
+		to verify:
+
+			git branch -a
+
+				git checkout <branch-name for each branch-name>
+
+			git remote --verbose OR git remote -v
+
+
+	b. if a local repository with a remote 'origin' is already existing (and therefore at least one commit has already been made) and another remote repository is to be added:
+
+		go to the directory then:
+
+			git remote add <remote_alias> <REMOTE_URL>
+
+				git remote --verbose OR git remote -v
+
+			git pull <remote_alias> <branch-name for each branch-name>
+
+
+2. from local repository to Github (this would be my most likely case) OR even to a local computer
+
+	a. when creating a brand new local repository from scratch and then creating a remote repository in Github:
+
+			mkdir <directory_name>
+
+			cd <directory_name>
+
+			git init
+
+		create a file or a .gitignore file
+
+			git add --all OR git add .gitignore
+
+			git commit
+
+		then go to Github, Log in to your account, Click the new repository button in the top-right;
+		you’ll have an option there to initialize the repository with a README file, but don’t;
+		Click the “Create repository” button; Copy the remote repository URL
+
+		go back to the directory of your local repository:
+
+			git remote add origin <REMOTE_URL>
+
+				git remote --verbose OR git remote -v
+
+			git push -u origin master
+
+
+	b. when a local repository is already existing (therefore at least one commit has already been made):
+
+		go to Github, Log in to your account, Click the new repository button in the top-right;
+		you’ll have an option there to initialize the repository with a README file, but don’t;
+		Click the “Create repository” button; Copy the remote repository URL
+
+		go back to the directory of your local repository:
+
+			git branch
+
+		list all the names of the branches
+
+			git remote add origin <REMOTE_URL>
+
+				git remote --verbose OR git remote -v
+
+		then do this command for all the branches:
+
+			git push -u origin <branch-name>
