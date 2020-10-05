@@ -1,16 +1,18 @@
 <link href="txtstyle.css" rel="stylesheet" type="text/css" />
 
-Rules of the Thumb in Establishing Remote Repositories
+<h1>Rules of the Thumb in Establishing Remote Repositories</h1>
 
-1. from Github OR even from a local computer (if repository is already existing in either sources) to a local computer
+<ol>
+  <li>from Github OR even from a local computer (if repository is already existing in either sources) to a local computer</li>
+  <p></p>
+    <ol type='a'>
+	  <li>if it would be the local repository's 'origin'/FIRST remote repository:</li>
 
-	a. if it would be the local repository's 'origin'/FIRST remote repository:
+			<p>git clone <REMOTE_URL> <option: directory_name></p>
 
-			git clone <REMOTE_URL> <option: directory_name>
+			<p>OR</p>
 
-			OR
-
-			git clone "/H/Users/Carlo Durian/sample"
+			<p>git clone "/H/Users/Carlo Durian/sample"</p>
 
 		to verify:
 
@@ -21,7 +23,7 @@ Rules of the Thumb in Establishing Remote Repositories
 			git remote --verbose OR git remote -v
 
 
-	b. if a local repository with a remote 'origin' is already existing (and therefore at least one commit has already been made) and another remote repository is to be added:
+	  <li>if a local repository with a remote 'origin' is already existing (and therefore at least one commit has already been made) and another remote repository is to be added:</li>
 
 		go to the directory then:
 
@@ -30,9 +32,9 @@ Rules of the Thumb in Establishing Remote Repositories
 				git remote --verbose OR git remote -v
 
 			git pull <remote_alias> <branch-name for each branch-name>
+	</ol>
 
-
-2. from local repository to Github (this would be my most likely case) OR even to a local computer
+<li>from local repository to Github (this would be my most likely case) OR even to a local computer</li>
 
 	a. when creating a brand new local repository from scratch and then creating a remote repository in Github:
 
@@ -80,3 +82,4 @@ Rules of the Thumb in Establishing Remote Repositories
 		then do this command for all the branches:
 
 			git push -u origin <branch-name>
+</ol>
